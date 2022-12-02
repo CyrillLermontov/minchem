@@ -1,4 +1,7 @@
 def count_of_elements():
+    """
+    Entering the number of elements
+    """
     while True:
         try:
             count_of_elems = int(input("Введите, какое количество элементов вы планируете задать: "))
@@ -11,6 +14,10 @@ def count_of_elements():
 
 
 def input_data(count_of_elems):
+    """
+    Element entry function.
+    Depending on the selected quantity, the data is written to the "chemical element: mass percentages" dictionary.
+    """
     users_inputs = {}
     for i in range(count_of_elems):
         key = input('Введите химический элемент: ')
@@ -20,8 +27,12 @@ def input_data(count_of_elems):
 
 
 def atoms_quantities(users_input, molar_masses):
+    """
+    This function calculates atomic masses.
+    Mass Percentage / Paint Mass.
+    """
     atoms_quants = {}
     for key in users_input.keys():
-        atoms_quants[key] = users_input[key] / molar_masses[key]
+        atoms_quants[key] = round(users_input[key] / molar_masses[key], 3)
     return atoms_quants
 

@@ -11,19 +11,18 @@ while True:
         molar_masses_of_elements = get_molar_mass(users_input_data.keys())
 
         atom_quantities = atoms_quantities(users_input_data, molar_masses_of_elements)
+
+        name_of_mineral = get_mineral(users_input_data)
+        print(name_of_mineral)
         break
     except Exception:
-        print("Попробуйте ещё раз!")
-    finally:
-        try:
-            answer = input("Хотите попробовать ещё раз? д-да н-нет")
+        print("Данные введены некоректно!")
+        answer = input("Хотите попробовать ещё раз? д-да н-нет")
 
-            if answer == "д":
-                pass
-            if answer == "н":
-                print("Пока! Надеюсь ещё увидимся xD")
-                raise SystemExit(1)
-        except Exception:
-            print("Я Вас не понимаю, ответьте на вопрос коректно!")
+        if answer == "д":
             pass
+        if answer == "н":
+            print("Пока! Надеюсь ещё увидимся xD")
+            raise SystemExit(1)
+
 
